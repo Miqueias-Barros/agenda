@@ -26,7 +26,7 @@ def submit_login(request):
 
         if usuario is not None:
             login(request, usuario)
-            return redirect('/')
+            return redirect('/agenda/')
         else:
             messages.error(request, "Usuário ou senha inválidos!")
 
