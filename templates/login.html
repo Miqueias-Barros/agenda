@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINHA AGENDA</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red;">
+                <strong>Erro:</strong> {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" action="{% url 'submit_login' %}">
+        {% csrf_token %}
+
+        <label>Usuário</label>
+        <input type="text" name="username">
+
+        <label>Senha</label>
+        <input type="password" name="password">
+
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
