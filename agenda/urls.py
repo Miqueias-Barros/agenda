@@ -22,6 +22,8 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.login_user, name='login'),
+    path('agenda/evento/', views.evento),
+    path('agenda/evento/submit', views.submit_evento),
     path('login/submit/', views.submit_login, name='submit_login'),
     path('', views.lista_eventos, name='agenda'),
     path('', include('core.urls')),
