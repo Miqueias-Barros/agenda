@@ -28,5 +28,6 @@ urlpatterns = [
     path('login/submit/', views.submit_login, name='submit_login'),
     path('logout/', views.logout_user),
     path('', views.lista_eventos, name='agenda'),
+    path('agenda/lista/', views.json_lista_evento),
     path('', include('core.urls')),
 ]
